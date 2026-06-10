@@ -6,7 +6,7 @@ services:
     container_name: springboot-api
     restart: unless-stopped
     ports:
-      - "8090:8080"
+      - "9090:8080"
     networks:
       - devops_net
 

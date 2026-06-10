@@ -1,5 +1,5 @@
 # Etapa 1: Build da aplicação
-FROM maven:3.9.9-eclipse-temurin-17-alpine AS builder
+FROM maven:3-eclipse-temurin-26-alpine AS builder
 
 WORKDIR /app
 COPY pom.xml .
@@ -8,7 +8,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Etapa 2: Imagem final (somente o jar)
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:26-jre-alpine
 
 WORKDIR /app
 
