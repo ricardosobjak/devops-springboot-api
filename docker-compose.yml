@@ -13,4 +13,4 @@ services:
 networks:
   devops_net:
     name: devops_net
-    driver: bridge
+    external: true
