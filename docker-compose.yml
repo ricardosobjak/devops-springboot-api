@@ -1,0 +1,16 @@
+services:
+  springboot-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: springboot-api
+    restart: unless-stopped
+    ports:
+      - "8090:8080"
+    networks:
+      - devops_net
+
+networks:
+  devops_net:
+    name: devops_net
+    driver: bridge
